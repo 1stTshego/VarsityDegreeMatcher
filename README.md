@@ -30,6 +30,3 @@ This project is licensed under the [MIT License](LICENSE).
 
 VarsityDegreeMatcher utilizes JavaScript for its frontend logic and relies on HTML and CSS for its user interface. Special thanks to [OpenAI](https://openai.com/) for providing language models that assisted in the development process.
 
----
-
-Feel free to customize this README template with additional information about your project, such as installation instructions, usage examples, or any other relevant details.
