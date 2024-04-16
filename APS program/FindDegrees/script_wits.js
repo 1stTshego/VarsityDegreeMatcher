@@ -1,5 +1,3 @@
-
-
 const WitsData = {
   "University of Witwatersrand (Wits)": [
     {
@@ -9,7 +7,8 @@ const WitsData = {
         "English Home Language": 5,
         "English First Additional Language": 5,
         "Mathematics": 5
-      }
+      },
+      "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/clm/accounting/"
     },
     {
       "degree": "Accounting Science",
@@ -18,7 +17,8 @@ const WitsData = {
         "English Home Language": 5,
         "English First Additional Language": 5,
         "Mathematics": 6
-      }
+      },
+        "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/clm/accounting-science-baccsc/"
     },
     {
       "degree": "Actuarial Science",
@@ -28,7 +28,9 @@ const WitsData = {
         "English First Additional Language": 7,
         "Mathematics": 7,
         "Physical Science": 7
-      }
+      },
+
+    "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/science/actuarial-science/" 
     },
     {
       "degree": "Aeronautical Engineering",
@@ -38,7 +40,8 @@ const WitsData = {
         "English First Additional Language": 5,
         "Mathematics": 5,
         "Physical Sciences": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/ebe/aeronautical-engineering/" 
     },
     {
       "degree": "Applied Bioinformatics",
@@ -47,7 +50,8 @@ const WitsData = {
         "English Home Language": 5,
         "English First Additional Language": 5,
         "Mathematics": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/science/applied-bioinformatics/" 
     },
     {
       "degree": "Applied Chemistry",
@@ -57,7 +61,8 @@ const WitsData = {
         "English First Additional Language": 5,
         "Mathematics": 6,
         "Physical Science": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/science/applied-chemistry/" 
     },
     {
       "degree": "Architectural Studies",
@@ -69,7 +74,8 @@ const WitsData = {
         "Afrikaans Eerste Additionlele Taal" : 4,   
         
 
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/ebe/architectural-studies/" 
     },
     {
       "degree": "Astronomy and Astrophysics",
@@ -79,7 +85,8 @@ const WitsData = {
         "English First Additional Language": 5,
         "Mathematics": 6,
         "Physical Science": 6
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/science/astronomy-and-astrophysics/" 
     },
     {
       "degree": "Audiology",
@@ -88,7 +95,8 @@ const WitsData = {
         "English Home Language": 5,
         "English First Additional Language": 5,
         "Mathematics": 4
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/humanities/audiology/" 
     },
     {
       "degree": "Bachelor of Arts (General BA)",
@@ -96,7 +104,8 @@ const WitsData = {
         "APS": 36,
         "English Home Language": 5,
         "English First Additional Language": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/humanities/ba/" 
     },
     {
       "degree": "Bachelor of Commerce (General)",
@@ -105,7 +114,8 @@ const WitsData = {
         "English Home Language": 5,
         "English First Additional Language": 5,
         "Mathematics": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/clm/bcom/" 
     },
     {
       "degree": "Bachelor of Engineering Science in Digital Arts",
@@ -115,7 +125,8 @@ const WitsData = {
         "English First Additional Language": 5,
         "Mathematics": 5,
         "Physical Sciences": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/ebe/digital-arts/" 
     },
     {
       "degree": "Bachelor of Laws (LLB) - Four-year stream (LFA14)",
@@ -125,7 +136,8 @@ const WitsData = {
         "English First Additional Language": 6,
         "Mathematics": 4,
         "Maths Literacy": 6
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/clm/llb-law/" 
     },
     {
       "degree": "Bachelor of Music",
@@ -133,7 +145,8 @@ const WitsData = {
         "APS": 34,
         "English Home Language": 5,
         "English First Additional Language": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/humanities/music/" 
     },
     {
       "degree": "Bachelor of Science (BSc) - BSc General",
@@ -142,7 +155,8 @@ const WitsData = {
         "English Home Language": 5,
         "English First Additional Language": 5,
         "Mathematics": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/science/bsc/" 
     },
     {
       "degree": "Bachelor of Science in Construction Studies",
@@ -151,7 +165,8 @@ const WitsData = {
         "English Home Language": 4,
         "English First Additional Language": 4,
         "Mathematics": 4
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/ebe/construction-studies/" 
     },
     {
       "degree": "Bachelor of Science in Urban and Regional Planning",
@@ -160,7 +175,8 @@ const WitsData = {
         "English Home Language": 4,
         "English First Additional Language": 4,
         "Mathematics": 4
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/ebe/urban-and-regional-planning/" 
     },
     {
       "degree": "Biochemistry and Cell Biology",
@@ -169,7 +185,8 @@ const WitsData = {
         "English Home Language": 5,
         "English First Additional Language": 5,
         "Mathematics": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/science/biochemistry-and-cell-biology/" 
     },
     {
       "degree": "Biodiversity",
@@ -178,7 +195,8 @@ const WitsData = {
         "English Home Language": 5,
         "English First Additional Language": 5,
         "Mathematics": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/health/biokinetics/" 
     },
     {
       "degree": "Biokinetics",
@@ -188,7 +206,8 @@ const WitsData = {
         "Mathematics": 5,
         "Life Sciences": 5,
         "Physical Sciences": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/science/actuarial-science/" 
     },
     {
       "degree": "Biological Sciences (Organismal Biology)",
@@ -197,7 +216,8 @@ const WitsData = {
         "English Home Language": 5,
         "English First Additional Language": 5,
         "Mathematics": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/science/organismal-biology/" 
     },
     {
       "degree": "Biomedical Engineering",
@@ -207,7 +227,8 @@ const WitsData = {
         "English First Additional Language": 5,
         "Mathematics": 5,
         "Physical Sciences": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/ebe/biomedical-engineering/" 
     },
     {
       "degree": "Biomedical Sciences",
@@ -217,7 +238,8 @@ const WitsData = {
         "Mathematics": 5,
         "Life Sciences": 5,
         "Physical Sciences": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/health/biomedical-sciences/" 
     },
     {
       "degree": "Chemical Engineering",
@@ -227,7 +249,8 @@ const WitsData = {
         "English First Additional Language": 5,
         "Mathematics": 5,
         "Physical Sciences": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/ebe/chemical-engineering/" 
     },
     {
       "degree": "Chemistry",
@@ -237,7 +260,8 @@ const WitsData = {
         "English First Additional Language": 5,
         "Mathematics": 6,
         "Physical Science": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/science/chemistry/" 
     },
     {
       "degree": "Chemistry with Chemical Engineering",
@@ -247,7 +271,8 @@ const WitsData = {
         "English First Additional Language": 5,
         "Mathematics": 6,
         "Physical Science": 6
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/science/chemistry-with-chemical-engineering/" 
     },
     {
       "degree": "Bachelor of Education in Intermediate Phase Teaching",
@@ -258,7 +283,8 @@ const WitsData = {
         "Mathematics": 4,
         "Maths Literacy": 5,
         "Technical Mathematics": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/humanities/bed-intermediate-phase-teaching/" 
     },
     {
       "degree": "Bachelor of Education in Senior Phase and Further Education and Training",
@@ -266,7 +292,8 @@ const WitsData = {
         "APS": 37,
         "English Home Language": 5,
         "English First Additional Language": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/humanities/bed-senior-phase-teaching/" 
     },
     {
       "degree": "Bachelor of Education: Foundation Phase Teaching",
@@ -277,7 +304,8 @@ const WitsData = {
         "Mathematics": 4,
         "Maths Literacy": 5,
         "Technical Mathematics": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/humanities/bed-foundation-phase-teaching/" 
     },
     {
       "degree": "Speech-Language Pathology",
@@ -286,7 +314,8 @@ const WitsData = {
         "English Home Language": 5,
         "English First Additional Language": 5,
         "Mathematics": 4
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/humanities/speech-language-pathology/" 
     },
     {
       "degree": "Social Work",
@@ -294,7 +323,8 @@ const WitsData = {
         "APS": 34,
         "English Home Language": 5,
         "English First Additional Language": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/humanities/social-work/" 
     },
     {
       "degree": "Property Studies",
@@ -303,7 +333,8 @@ const WitsData = {
         "English Home Language": 4,
         "English First Additional Language": 4,
         "Mathematics": 4
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/ebe/property-studies/" 
     },
     {
       "degree": "Politics, Philosophy and Economics (PPE)",
@@ -312,7 +343,8 @@ const WitsData = {
         "English Home Language": 5,
         "English First Additional Language": 5,
         "Mathematics": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/clm/ppe/" 
     },
     {
       "degree": "Physiotherapy",
@@ -322,7 +354,8 @@ const WitsData = {
         "Mathematics": 5,
         "Life Sciences": 5,
         "Physical Sciences": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/health/physiotherapy/" 
     },
     {
       "degree": "Physics",
@@ -332,7 +365,8 @@ const WitsData = {
         "English First Additional Language": 5,
         "Mathematics": 6,
         "Physical Science": 5
-      }
+      },
+       "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/science/physics/" 
     },
     {
       "degree": "Pharmacy",
@@ -343,7 +377,7 @@ const WitsData = {
         "Life Sciences": 5,
         "Physical Sciences": 5
       },
-      "URL": "https://www.wits.ac.za/course-finder/undergraduate/health/pharmacy/",
+      "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/health/pharmacy/",
       "Requirements": "APS 42+"
     },
     {
@@ -356,7 +390,7 @@ const WitsData = {
         "Life Sciences": 4,
         "Physical Sciences": 4
       },
-      "URL": "https://www.wits.ac.za/course-finder/undergraduate/health/oral-health-sciences/"
+      "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/health/oral-health-sciences/"
     },
     {
       "degree": "Occupational Therapy",
@@ -367,7 +401,7 @@ const WitsData = {
         "Life Sciences": 4,
         "Physical Sciences": 4
       },
-      "URL": "https://www.wits.ac.za/course-finder/undergraduate/health/occupational-therapy/"
+      "websiteURL": "https://www.wits.ac.za/course-finder/undergraduate/health/occupational-therapy/"
     }
   ]
 };
@@ -437,12 +471,7 @@ function deleteSubject(button) {
     subjectCounter--;
 }
 
-
-
 subjectCounter = 0;
-
-// Function to display eligible degrees based on user inputs
-//let subjectCounter = 1;
 
 // Function to add a subject
 function addSubject() {
@@ -533,7 +562,7 @@ function displayEligibleDegrees() {
     // Initialize an array to store eligible degrees
     let eligibleDegrees = [];
 
-    // Iterate through each degree in the UPData
+    // Iterate through each degree in the WitsData
     WitsData["University of Witwatersrand (Wits)"].forEach(degree => {
         // Flag to track if all subject requirements are met
         let allSubjectsMet = true;
@@ -542,6 +571,13 @@ function displayEligibleDegrees() {
         Object.keys(degree.requirements).forEach(subject => {
             if (subject === "APS") {
                 if (aps < degree.requirements[subject]) {
+                    allSubjectsMet = false;
+                }
+            } else if (subject === "English Home Language" || subject === "English First Additional Language") {
+                // Check if either English Home Language or English First Additional Language meets the requirement
+                let englishSubjectIndex = selectedSubjects.indexOf("English Home Language");
+                let additionalEnglishSubjectIndex = selectedSubjects.indexOf("English First Additional Language");
+                if (englishSubjectIndex === -1 && additionalEnglishSubjectIndex === -1) {
                     allSubjectsMet = false;
                 }
             } else {
@@ -559,7 +595,7 @@ function displayEligibleDegrees() {
 
         // If all subject requirements are met, add the degree to eligibleDegrees
         if (allSubjectsMet) {
-            eligibleDegrees.push(degree.degree);
+            eligibleDegrees.push(degree);
         }
     });
 
@@ -570,7 +606,11 @@ function displayEligibleDegrees() {
         let list = document.createElement('ul');
         eligibleDegrees.forEach(degree => {
             let listItem = document.createElement('li');
-            listItem.textContent = degree;
+            let link = document.createElement('a');
+            link.textContent = degree.degree;
+            link.href = degree.websiteURL; // Set the href to the website URL
+            link.target = "_blank"; // Open the link in a new tab
+            listItem.appendChild(link);
             list.appendChild(listItem);
         });
         resultsDiv.appendChild(list);
@@ -578,6 +618,10 @@ function displayEligibleDegrees() {
         resultsDiv.innerHTML += "<p>No degrees found matching your criteria.</p>";
     }
 }
+
+
+
+
 
 // Function to calculate the level based on the percentage
 function calculateLevel(percentage) {
