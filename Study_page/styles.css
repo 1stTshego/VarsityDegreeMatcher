@@ -19,6 +19,7 @@ body {
     border-radius: 5px;
     text-align: center; /* Center the content horizontally */
     width: 80%; /* Adjust the width as needed */
+    display: block; /* Ensure containers stack vertically */
 }
 
 
