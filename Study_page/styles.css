@@ -204,8 +204,14 @@ button:hover {
 }
 
 .container {
-    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center; /* Center the content horizontally */
+    width: 80%; /* Adjust the width as needed */
 }
+
 
 .dropdown {
     position: relative;
