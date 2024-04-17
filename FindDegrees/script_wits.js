@@ -429,7 +429,7 @@ function addSubject() {
     option.value = "";
     option.textContent = "Select a subject";
     select.appendChild(option);
-    const subjects = ["Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "History", "Geography", "Religious Studies", "English Home Language", "English First Additional Language", "Afrikaans Huistaal", "Afrikaans Eerste Additionele Taal", "Sesotho Home Language", "Siswati Home Language", "Setswana Home Language", "isiZulu Home Language", "isiXhosa Home Language", "isiNdebele Home Language", "Sepedi Home Language", "Xitsonga Home Language", "Tshivenda Home Language", "Mathematics", "Mathematical Literacy", "Life Orientation"];
+    const subjects = ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "History", "Geography", "Religious Studies", "English Home Language", "English First Additional Language", "Afrikaans Huistaal", "Afrikaans Eerste Additionele Taal", "Sesotho Home Language", "Siswati Home Language", "Setswana Home Language", "isiZulu Home Language", "isiXhosa Home Language", "isiNdebele Home Language", "Sepedi Home Language", "Xitsonga Home Language", "Tshivenda Home Language", "Mathematics", "Mathematical Literacy", "Life Orientation"];
 
     subjects.forEach(function(subject) {
         const option = document.createElement("option");
