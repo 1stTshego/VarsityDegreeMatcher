@@ -256,9 +256,16 @@ button:hover {
 }
 
 .contact-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Adjust the background color as needed */
+    color: #fff; /* Adjust the text color as needed */
+    padding: 20px;
     text-align: center;
-    margin-top: 50px; /* Adjust margin-top as needed */
 }
+
 
 /* Gradient Animation */
 @keyframes gradientAnimation {
