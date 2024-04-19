@@ -1,78 +1,58 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>South African University Degree Selector</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script_wits.js" defer></script> <!-- Adding defer attribute for better performance -->
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University of the Witwatersrand</title>
+<link rel="stylesheet" href="style.css">
+<script src="script_sun.js" defer></script>
+</head>
+<body>
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="/index.html">Not sure what to study? <span> &#128533; </span> </a>
-        </div>
-    </nav>
-
-<div class="dropdown">
-  <button class="dropbtn">Universities &#9776;</button>
-  <div class="dropdown-content">
-    <a href="home_up.html">University of Pretoria (UP)</a>
-    <a href="home_wits.html">University of  Witwatersrand (Wits)</a>
-    <a href="home_sun.html">Stellenbosch University (SUN)</a>
-  </div>
-</div>
-
-<script>
-// Function to navigate to the selected page
-function navigatePage(selectElement) {
-  var selectedPage = selectElement.value;
-  if (selectedPage) {
-    window.location = selectedPage; // Redirect to the selected page
-  }
-}
-</script>
-
-    <h1> University of Witwatersrand (Wits) </h1>
-    <h1> What do I qualify to do? </h1>
+<nav class="navbar">
     <div class="container">
-        <h1>South African University Degree Selector</h1>
-        <label for="university">Select your preferred university:</label>
-        <select id="university">
-        
-          
-            <option value="UP">University of  Witwatersrand (Wits)</option>
+        <a href="/index.html" class="not-sure-link">Not sure what to study? <span>&#128533;</span></a>
+    </div>
+</nav>
 
-        </select>
-        
-        <div id="subject-container">
-            <div class="subject-wrapper">
-                <div class="subject-container">
-                    <select class="subject" id="subjects1">
-                        <option value="">Select a subject</option>
-                        <option value="Physical Sciences">Physical Sciences</option>
-                        <!-- Add more options as needed -->
-                    </select>
-                    <input type="number" class="percentage-input" id="percentage1" min="0" max="100" placeholder="%" style="width: 50px; " value="75"    >
-                    <button class="delete-button" onclick="deleteSubject(this)">De  lete</button>
-                </div>
-            </div>
+<div class="container">
+    <h1>South African University Degree Selector</h1>
+    <div class="dropdown">
+        <button class="dropbtn">Universities &#9776;</button>
+        <div class="dropdown-content">
+            <a href="home_up.html">University of Pretoria (UP)</a>
+            <a href="home_wits.html">University of Witwatersrand (Wits)</a>
+            <a href="home_sun.html">Stellenbosch University (SUN)</a>
         </div>
-
-        <button id="add-button" onclick="addSubject()">Add Subject</button>
-        
-        <label for="aps">APS:</label>
-        <input type="number" id="aps" min="0" max="100" value="45">
-
-        <label for="average">Average:</label>
-        <input type="number" id="average" min="0" max="100" value="80">
-        
-        <button id="show-button" onclick="displayEligibleDegrees()">Show Degrees</button>
-
-        
-        <div id="results"></div>
     </div>
 
-    </body>
-    </html>
+    <h2>What do I qualify to do?</h2>
+
+    <div id="subject-container">
+        <div class="subject-wrapper">
+            <div class="subject-container">
+                <select class="subject" id="subjects1">
+                    <option value="">Select a subject</option>
+                    <option value="Physical Sciences">Physical Sciences</option>
+                </select>
+                <input type="number" class="percentage-input" id="percentage1" min="0" max="100" placeholder="%" value="75">
+                <button class="delete-button" onclick="deleteSubject(this)">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <button id="add-button" class="action-button" onclick="addSubject()">Add Subject</button>
+    
+    <label for="aps">APS:</label>
+    <input type="number" id="aps" class="percentage-input" min="0" max="100" value="45">
+
+    <label for="average">Average:</label>
+    <input type="number" id="average" class="percentage-input" min="0" max="100" value="80">
+    
+    <button id="show-button" class="action-button" onclick="displayEligibleDegrees()">Show Degrees</button>
+    
+    <div id="results"></div>
+</div>
+
+</body>
+</html>
