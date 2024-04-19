@@ -396,7 +396,7 @@ function displayEligibleDegrees() {
                 // Check if either Afrikaans Huistaal or Afrikaans Eerste Addisionele Taal meets the requirement
                 let afrikaansSubjectIndex = selectedSubjects.indexOf("Afrikaans Huistaal"); //Husitall
                 let additionalAfrikaansSubjectIndex = selectedSubjects.indexOf("Afrikaans Eerste Addisionele Taal"); //fal 
-                if (afrikaansSubjectIndex === -1 || additionalAfrikaansSubjectIndex === -1) {       
+                if (afrikaansSubjectIndex === -1 && additionalAfrikaansSubjectIndex === -1) {       
                     allSubjectsMet = false;
                 }
             } else {
