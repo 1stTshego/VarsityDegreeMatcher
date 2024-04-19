@@ -196,9 +196,10 @@ h2 {
 
 /* Style for the "Not sure what to study?" link */
 .not-sure-link {
-    color: #000; /* Changed from #0000 to #000 */
+    color: #fff; /* Changed from #000 to #fff for white text */
     text-decoration: none;
 }
+
 
 .not-sure-link:hover {
     text-decoration: underline;
