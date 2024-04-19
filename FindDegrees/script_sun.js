@@ -391,11 +391,12 @@ function displayEligibleDegrees() {
                 if (englishSubjectIndex === -1 && additionalEnglishSubjectIndex === -1) {
                     allSubjectsMet = false;
                 }
+              //edit here
             } else if (subject === "Afrikaans Huistaal" || subject === "Afrikaans Eerste Addisionele Taal") {
                 // Check if either Afrikaans Huistaal or Afrikaans Eerste Addisionele Taal meets the requirement
-                let afrikaansSubjectIndex = selectedSubjects.indexOf("Afrikaans Huistaal");
-                let additionalAfrikaansSubjectIndex = selectedSubjects.indexOf("Afrikaans Eerste Addisionele Taal");
-                if (afrikaansSubjectIndex === -1 && additionalAfrikaansSubjectIndex === -1) {
+                let afrikaansSubjectIndex = selectedSubjects.indexOf("Afrikaans Huistaal"); //Husitall
+                let additionalAfrikaansSubjectIndex = selectedSubjects.indexOf("Afrikaans Eerste Addisionele Taal"); //fal 
+                if (afrikaansSubjectIndex === -1 || additionalAfrikaansSubjectIndex === -1) {       
                     allSubjectsMet = false;
                 }
             } else {
