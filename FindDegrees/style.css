@@ -183,7 +183,7 @@ h2 {
 
 .navbar a {
     color: #fff;
-    text-decoration: none;
+ 
     padding: 10px;
     display: inline-block;
 }
@@ -196,11 +196,12 @@ h2 {
 
 /* Style for the "Not sure what to study?" link */
 .not-sure-link {
-    color: #000;
+    color: #000; /* Changed from #0000 to #000 */
     text-decoration: none;
 }
 
 .not-sure-link:hover {
     text-decoration: underline;
 }
+
 
