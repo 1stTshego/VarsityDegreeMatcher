@@ -143,18 +143,7 @@ h2 {
     width: calc(50% - 60px);
 }
 
-/* Show "Not sure what to study?" link only on hover */
-.not-sure-link {
-    opacity: 0;
-    /* Initially hide the link */
-    transition: opacity 0.3s ease;
-    /* Add transition effect */
-}
 
-.navbar:hover .not-sure-link {
-    opacity: 1;
-    /* Show the link on hover */
-}
 
 .inputs-container {
     display: flex;
