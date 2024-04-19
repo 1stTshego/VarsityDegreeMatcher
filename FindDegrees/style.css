@@ -135,9 +135,7 @@ h2 {
     cursor: pointer;
 }
 
-.action-button:hover {
-    background-color: #0056b3;
-}
+
 
 .percentage-input {
     width: calc(50% - 60px);
