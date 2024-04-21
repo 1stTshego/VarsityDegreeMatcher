@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: #222222;
     color: #75b8ff;
     /* Text color */
 }
@@ -205,4 +205,15 @@ h2 {
     text-decoration: underline;
 }
 
+.subject,
+.percentage-input,
+#aps,
+#average {
+    background-color: #3b3b3b; /* Set the background color to a darker shade */
+    color: white; /* Set the text color to white */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Add some border radius for rounded corners */
+    padding: 10px; /* Add padding for spacing */
+    margin-bottom: 10px; /* Add margin to separate elements */
+}
 
