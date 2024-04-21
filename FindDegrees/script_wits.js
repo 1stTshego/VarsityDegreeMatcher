@@ -406,12 +406,11 @@ const WitsData = {
   ]
 };
 
+let subjectCounter = 0;
 
-
-// Function to add a subject
 function addSubject() {
-    if (subjectCounter >= 6) {
-        alert("You can only select up to 6 subjects.");
+    if (subjectCounter >= 7) {
+        alert("You can only select up to 7 subjects.");
         return;
     }
     subjectCounter++;
@@ -425,85 +424,36 @@ function addSubject() {
     const select = document.createElement("select");
     select.classList.add("subject");
     select.id = "subjects" + subjectCounter;
-    const option = document.createElement("option");
-    option.value = "";
-    option.textContent = "Select a subject";
-    select.appendChild(option);
-    const subjects = ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Computer Applications Technology","Information Technology" ,"Accounting", "History", "Geography", "Religious Studies", "English Home Language", "English First Additional Language", "Afrikaans Huistaal", "Afrikaans Eerste Additionele Taal", "Sesotho Home Language", "Siswati Home Language", "Setswana Home Language", "isiZulu Home Language", "isiXhosa Home Language", "isiNdebele Home Language", "Sepedi Home Language", "Xitsonga Home Language", "Tshivenda Home Language", "Mathematics", "Mathematical Literacy", "Life Orientation"];
-
-    subjects.forEach(function(subject) {
-        const option = document.createElement("option");
-        option.value = subject;
-        option.textContent = subject;
-        select.appendChild(option);
-    });
-
-select.value = "Mathematics "; 
-    subjectDiv.appendChild(select);
-
-    const input = document.createElement("input");
-    input.type = "number";
-    input.classList.add("percentage-input");
-    input.id = "percentage" + subjectCounter;
-    input.min = "0";
-    input.max = "100";
-    input.placeholder = "%";
-    input.style.width = "50px";
-
-     input.value = "75";
-
-    subjectDiv.appendChild(input);
-
-    const deleteButton = document.createElement("button");
-    deleteButton.classList.add("delete-button");
-    deleteButton.textContent = "Delete";
-    deleteButton.onclick = function() { deleteSubject(this); };
-    subjectDiv.appendChild(deleteButton);
-
-    subjectContainer.appendChild(subjectDiv);
-    document.getElementById("subject-container").appendChild(subjectContainer);
-}
-
-// Function to delete a subject
-function deleteSubject(button) {
-    const subjectContainer = button.parentNode.parentNode;
-    subjectContainer.remove();
-    subjectCounter--;
-}
-
-subjectCounter = 0;
-
-// Function to add a subject
-function addSubject() {
-    if (subjectCounter >= 6) {
-        alert("You can only select up to 6 subjects.");
-        return;
-    }
-    subjectCounter++;
     
-    const subjectContainer = document.createElement("div");
-    subjectContainer.classList.add("subject-wrapper");
-
-    const subjectDiv = document.createElement("div");
-    subjectDiv.classList.add("subject-container");
-
-    const select = document.createElement("select");
-    select.classList.add("subject");
-    select.id = "subjects" + subjectCounter;
     const option = document.createElement("option");
     option.value = "";
     option.textContent = "Select a subject";
     select.appendChild(option);
-    const subjects = ["Computer Applications Technology","Infomation Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "History", "Geography", "Religious Studies", "English Home Language", "English First Additional Language", "Afrikaans Huistaal", "Afrikaans Eerste Additionele Taal", "Sesotho Home Language", "Siswati Home Language", "Setswana Home Language", "isiZulu Home Language", "isiXhosa Home Language", "isiNdebele Home Language", "Sepedi Home Language", "Xitsonga Home Language", "Tshivenda Home Language", "Mathematics", "Mathematical Literacy", "Life Orientation""computer applications technology",];
+    
+    // Define categories
+    const categories = {
+        "Language 1": ["English Home Language", "Afrikaans Huistaal", "Sesotho Home Language", "Siswati Home Language", "Setswana Home Language", "isiZulu Home Language", "isiXhosa Home Language", "isiNdebele Home Language", "Sepedi Home Language", "Xitsonga Home Language", "Tshivenda Home Language"],
+        "Language 2": ["English First Additional Language", "Afrikaans Eerste Additionele Taal"],
+        "Maths": ["Mathematics", "Mathematical Literacy", "Technical Mathematics"],
+        "LO": ["Life Orientation"],
+        "Subject 5": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies, History, Tourism"],
+        "Subject 6": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies, History, Tourism"],
+        "Subject 7": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies, History, Tourism"],
+    };
+    
+    // Populate select options based on categories
+    for (const category in categories) {
+        const optgroup = document.createElement("optgroup");
+        optgroup.label = category;
+        categories[category].forEach(subject => {
+            const option = document.createElement("option");
+            option.value = subject;
+            option.textContent = subject;
+            optgroup.appendChild(option);
+        });
+        select.appendChild(optgroup);
+    }
 
-    subjects.forEach(function(subject) {
-        const option = document.createElement("option");
-        option.value = subject;
-        option.textContent = subject;
-        select.appendChild(option);
-    });
-
-select.value = "Mathematics "; 
     subjectDiv.appendChild(select);
 
     const input = document.createElement("input");
@@ -514,8 +464,7 @@ select.value = "Mathematics ";
     input.max = "100";
     input.placeholder = "%";
     input.style.width = "50px";
-
-     input.value = "75";
+    input.value = "75";
 
     subjectDiv.appendChild(input);
 
@@ -528,15 +477,6 @@ select.value = "Mathematics ";
     subjectContainer.appendChild(subjectDiv);
     document.getElementById("subject-container").appendChild(subjectContainer);
 }
-
-// Function to delete a subject
-function deleteSubject(button) {
-    const subjectContainer = button.parentNode.parentNode;
-    subjectContainer.remove();
-    subjectCounter--;
-}
-
-subjectCounter = 0;
 
 // Function to display eligible degrees based on user inputs
 function displayEligibleDegrees() {
@@ -618,10 +558,6 @@ function displayEligibleDegrees() {
         resultsDiv.innerHTML += "<p>No degrees found matching your criteria.</p>";
     }
 }
-
-
-
-
 
 // Function to calculate the level based on the percentage
 function calculateLevel(percentage) {
