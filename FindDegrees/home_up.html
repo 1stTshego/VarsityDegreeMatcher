@@ -17,13 +17,14 @@
 </nav>
 
 <div class="container">
+    <img src="download (2).jpeg" alt="Stellenbosch University Logo" class="university-logo">
     <h1>University of Pretoria</h1>
     <div class="dropdown">
         <button class="dropbtn">Universities &#9776;</button>
         <div class="dropdown-content">
-            <a href="home_up.html">University of Pretoria (UP)</a>
-            <a href="home_wits.html">University of Witwatersrand (Wits)</a>
-            <a href="home_sun.html">Stellenbosch University (SUN)</a>
+            <a href="home_up.html" onclick="saveSelectedSubjects()">University of Pretoria (UP)</a>
+            <a href="home_wits.html" onclick="saveSelectedSubjects()">University of Witwatersrand (Wits)</a>
+            <a href="home_sun.html" onclick="saveSelectedSubjects()">Stellenbosch University (SUN)</a>
         </div>
     </div>
 
@@ -62,9 +63,9 @@
             "Language 2": ["English First Additional Language", "Afrikaans Eerste Additionele Taal"],
             "Maths": ["Mathematics", "Mathematical Literacy", "Technical Mathematics"],
             "LO": ["Life Orientation"],
-            "Subject 5": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies, History, Tourism"],
-            "Subject 6": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies, History, Tourism"],
-            "Subject 7": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies, History, Tourism"],
+            "Subject 5": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies", "History", "Tourism"],
+            "Subject 6": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies", "History", "Tourism"],
+            "Subject 7": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies", "History", "Tourism],
         };
 
         for (const category in categories) {
@@ -79,6 +80,24 @@
             select.appendChild(optgroup);
         }
     });
+
+function saveSelectedSubjects() {
+    const selectedSubjects = document.querySelectorAll('.subject');
+    const selectedSubjectValues = Array.from(selectedSubjects).map(select => select.value);
+    localStorage.setItem('selectedSubjects', JSON.stringify(selectedSubjectValues));
+}
+
+window.onload = function() {
+    const savedSubjects = localStorage.getItem('selectedSubjects');
+    if (savedSubjects) {
+        const selectedSubjectValues = JSON.parse(savedSubjects);
+        const selectedSubjects = document.querySelectorAll('.subject');
+        selectedSubjects.forEach((select, index) => {
+            select.value = selectedSubjectValues[index];
+        });
+    }
+};
+
 </script>
 </body>
 </html>
