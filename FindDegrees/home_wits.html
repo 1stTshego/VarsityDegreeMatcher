@@ -33,8 +33,7 @@
         <div class="subject-wrapper">
             <div class="subject-container">
                 <select class="subject" id="subjects1">
-                    <option value="">Select a subject</option>
-                    
+                    <!-- Options will be added dynamically here -->
                 </select>
                 <input type="number" class="percentage-input" id="percentage1" min="0" max="100" placeholder="%" value="75">
                 <button class="delete-button" onclick="deleteSubject(this)">Delete</button>
@@ -54,6 +53,32 @@
     
     <div id="results"></div>
 </div>
+<script>
+    // Populate the first dropdown with subjects
+    document.addEventListener("DOMContentLoaded", function() {
+        const select = document.getElementById("subjects1");
+        const categories = {
+            "Language 1": ["English Home Language", "Afrikaans Huistaal", "Sesotho Home Language", "Siswati Home Language", "Setswana Home Language", "isiZulu Home Language", "isiXhosa Home Language", "isiNdebele Home Language", "Sepedi Home Language", "Xitsonga Home Language", "Tshivenda Home Language"],
+            "Language 2": ["English First Additional Language", "Afrikaans Eerste Additionele Taal"],
+            "Maths": ["Mathematics", "Mathematical Literacy", "Technical Mathematics"],
+            "LO": ["Life Orientation"],
+            "Subject 5": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies, History, Tourism"],
+            "Subject 6": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies, History, Tourism"],
+            "Subject 7": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies, History, Tourism"],
+        };
 
+        for (const category in categories) {
+            const optgroup = document.createElement("optgroup");
+            optgroup.label = category;
+            categories[category].forEach(subject => {
+                const option = document.createElement("option");
+                option.value = subject;
+                option.textContent = subject;
+                optgroup.appendChild(option);
+            });
+            select.appendChild(optgroup);
+        }
+    });
+</script>
 </body>
 </html>
