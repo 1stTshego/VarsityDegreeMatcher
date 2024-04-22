@@ -227,6 +227,15 @@ requirements: {
 ]
 };
 
+let subjectCounter = 0;
+
+function addSubject() {
+}
+
+// Function to delete a subject
+function deleteSubject(button) {
+}
+
 function calculateUWCPoints(percentages) {
     const uwcLevels = {
         "90-100%": 8,
