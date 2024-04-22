@@ -217,3 +217,11 @@ h2 {
     margin-bottom: 10px; /* Add margin to separate elements */
 }
 
+.university-logo {
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+    width: 150px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
