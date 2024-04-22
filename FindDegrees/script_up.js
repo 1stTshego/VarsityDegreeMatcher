@@ -192,73 +192,80 @@ let subjectCounter = 0;
 
 
 function addSubject() {
-    if (subjectCounter >= 7) {
-        alert("You can only select up to 7 subjects.");
-        return;
-    }
-    subjectCounter++;
-    
-    const subjectContainer = document.createElement("div");
-    subjectContainer.classList.add("subject-wrapper");
+  if (subjectCounter >= 7) {
+      alert("You can only select up to 7 subjects.");
+      return;
+  }
+  subjectCounter++;
+  
+  const subjectContainer = document.createElement("div");
+  subjectContainer.classList.add("subject-wrapper");
 
-    const subjectDiv = document.createElement("div");
-    subjectDiv.classList.add("subject-container");
+  const subjectDiv = document.createElement("div");
+  subjectDiv.classList.add("subject-container");
 
-    const select = document.createElement("select");
-    select.classList.add("subject");
-    select.id = "subjects" + subjectCounter;
-    
-    const option = document.createElement("option");
-    option.value = "";
-    option.textContent = "Select a subject";
-    select.appendChild(option);
-    
-    // Define categories
-    const categories = {
-        "Language 1": ["English Home Language", "Afrikaans Huistaal", "Sesotho Home Language", "Siswati Home Language", "Setswana Home Language", "isiZulu Home Language", "isiXhosa Home Language", "isiNdebele Home Language", "Sepedi Home Language", "Xitsonga Home Language", "Tshivenda Home Language"],
-        "Language 2": ["English First Additional Language", "Afrikaans Eerste Additionele Taal"],
-        "Maths": ["Mathematics", "Mathematical Literacy", "Technical Mathematics"],
-        "LO": ["Life Orientation"],
-        "Subject 5": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies, History, Tourism"],
-        "Subject 6": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies, History, Tourism"],
-        "Subject 7": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies, History, Tourism"],
-    };
-    
-    // Populate select options based on categories
-    for (const category in categories) {
-        const optgroup = document.createElement("optgroup");
-        optgroup.label = category;
-        categories[category].forEach(subject => {
-            const option = document.createElement("option");
-            option.value = subject;
-            option.textContent = subject;
-            optgroup.appendChild(option);
-        });
-        select.appendChild(optgroup);
-    }
+  const select = document.createElement("select");
+  select.classList.add("subject");
+  select.id = "subjects" + subjectCounter;
+  
+  const option = document.createElement("option");
+  option.value = "";
+  option.textContent = "Select a subject";
+  select.appendChild(option);
+  
+  // Define categories
+  const categories = {
+      "Language 1": ["English Home Language", "Afrikaans Huistaal", "Sesotho Home Language", "Siswati Home Language", "Setswana Home Language", "isiZulu Home Language", "isiXhosa Home Language", "isiNdebele Home Language", "Sepedi Home Language", "Xitsonga Home Language", "Tshivenda Home Language"],
+      "Language 2": ["English First Additional Language", "Afrikaans Eerste Additionele Taal"],
+      "Maths": ["Mathematics", "Mathematical Literacy", "Technical Mathematics"],
+      "LO": ["Life Orientation"],
+      "Subject 5": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies, History, Tourism"],
+      "Subject 6": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies, History, Tourism"],
+      "Subject 7": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies, History, Tourism"],
+  };
+  
+  // Populate select options based on categories
+  for (const category in categories) {
+      const optgroup = document.createElement("optgroup");
+      optgroup.label = category;
+      categories[category].forEach(subject => {
+          const option = document.createElement("option");
+          option.value = subject;
+          option.textContent = subject;
+          optgroup.appendChild(option);
+      });
+      select.appendChild(optgroup);
+  }
 
-    subjectDiv.appendChild(select);
+  subjectDiv.appendChild(select);
 
-    const input = document.createElement("input");
-    input.type = "number";
-    input.classList.add("percentage-input");
-    input.id = "percentage" + subjectCounter;
-    input.min = "0";
-    input.max = "100";
-    input.placeholder = "%";
-    input.style.width = "50px";
-    input.value = "75";
+  const input = document.createElement("input");
+  input.type = "number";
+  input.classList.add("percentage-input");
+  input.id = "percentage" + subjectCounter;
+  input.min = "0";
+  input.max = "100";
+  input.placeholder = "%";
+  input.style.width = "50px";
+  input.value = "75";
 
-    subjectDiv.appendChild(input);
+  subjectDiv.appendChild(input);
 
-    const deleteButton = document.createElement("button");
-    deleteButton.classList.add("delete-button");
-    deleteButton.textContent = "Delete";
-    deleteButton.onclick = function() { deleteSubject(this); };
-    subjectDiv.appendChild(deleteButton);
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add("delete-button");
+  deleteButton.textContent = "Delete";
+  deleteButton.onclick = function() { deleteSubject(this); };
+  subjectDiv.appendChild(deleteButton);
 
-    subjectContainer.appendChild(subjectDiv);
-    document.getElementById("subject-container").appendChild(subjectContainer);
+  subjectContainer.appendChild(subjectDiv);
+  document.getElementById("subject-container").appendChild(subjectContainer);
+}
+
+// Function to delete a subject
+function deleteSubject(button) {
+  const subjectContainer = button.closest('.subject-wrapper');
+  subjectContainer.remove();
+  subjectCounter--;
 }
 
 // Function to display eligible degrees based on user inputs
