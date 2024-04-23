@@ -236,6 +236,34 @@ function addSubject() {
 function deleteSubject(button) {
 }
 
+function displayEligibleDegreesUWC() {
+    const averageInput = document.getElementById('average');
+    const nscAverage = parseInt(averageInput.value);
+
+    let eligibleDegrees = [];
+
+    UWCData["University of Western Cape (UWC)"].forEach(degree => {
+        if (nscAverage >= degree.requirements["UWC points"]) {
+            eligibleDegrees.push(degree);
+        }
+    });
+
+    let resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = "<h2>Eligible Degrees at UWC:</h2>";
+    if (eligibleDegrees.length > 0) {
+        let list = document.createElement('ul');
+        eligibleDegrees.forEach(degree => {
+            let listItem = document.createElement('li');
+            listItem.textContent = degree.degree;
+            list.appendChild(listItem);
+        });
+        resultsDiv.appendChild(list);
+    } else {
+        resultsDiv.innerHTML += "<p>No degrees found matching your criteria at UWC.</p>";
+    }
+}
+
+
 function calculateUWCPoints(percentages) {
     const uwcLevels = {
         "90-100%": 8,
