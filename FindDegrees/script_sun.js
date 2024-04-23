@@ -400,7 +400,7 @@ function displayEligibleDegrees() {
                     allSubjectsMet = false;
                 }
             } else if (subject === "APS") {
-                // Check APS requirement if needed
+                // Check APS requirement if needed  
             } else if (subject === "English Home Language" || subject === "English First Additional Language") {
                 // Check if either English Home Language or English First Additional Language meets the requirement
                 let englishSubjectIndex = selectedSubjects.indexOf("English Home Language");
@@ -410,12 +410,14 @@ function displayEligibleDegrees() {
                 }
               //edit here
             } else if (subject === "Afrikaans Huistaal" || subject === "Afrikaans Eerste Addisionele Taal") {
-                // Check if either Afrikaans Huistaal or Afrikaans Eerste Addisionele Taal meets the requirement
-                let afrikaansSubjectIndex = selectedSubjects.indexOf("Afrikaans Huistaal"); //Husitall
-                let additionalAfrikaansSubjectIndex = selectedSubjects.indexOf("Afrikaans Eerste Addisionele Taal"); //fal 
-                if (afrikaansSubjectIndex === -1 && additionalAfrikaansSubjectIndex === -1) {       
-                    allSubjectsMet = false;
-                }
+    // Check if either Afrikaans Huistaal or Afrikaans Eerste Addisionele Taal meets the requirement
+    let afrikaansSubjectIndex = selectedSubjects.indexOf("Afrikaans Huistaal");
+    let additionalAfrikaansSubjectIndex = selectedSubjects.indexOf("Afrikaans Eerste Addisionele Taal");
+    if (afrikaansSubjectIndex === -1 && additionalAfrikaansSubjectIndex === -1) {
+        allSubjectsMet = false;
+    }
+}
+
             } else {
                 // Check individual subject requirements if needed
                 let subjectIndex = selectedSubjects.indexOf(subject);
