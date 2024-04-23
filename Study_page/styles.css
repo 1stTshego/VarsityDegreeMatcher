@@ -17,8 +17,7 @@ body {
 .container {
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    
     text-align: center;
     width: 80%;
     display: block;
@@ -92,6 +91,8 @@ body {
 }
 
 .contact-link {
+      align-items: center;
+    justify-content: center;
     display: block; /* Change to block so it takes full width */
     margin-top: 20px; /* Add some space between the paragraph and the link */
 }
