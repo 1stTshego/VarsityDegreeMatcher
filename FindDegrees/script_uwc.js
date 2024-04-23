@@ -307,31 +307,74 @@ function deleteSubject(button) {
 }
 
 function displayEligibleDegreesUWC() {
-    const averageInput = document.getElementById('average');
-    const nscAverage = parseInt(averageInput.value);
+    // Get the selected subjects and percentages from the form
+    const selectedSubjects = [];
+    const subjectElements = document.querySelectorAll('.subject');
+    subjectElements.forEach(select => {
+        if (select.value !== "") {
+            selectedSubjects.push(select.value);
+        }
+    });
 
+    const percentageInputs = document.querySelectorAll('.percentage-input');
+    const percentages = Array.from(percentageInputs).map(input => parseInt(input.value));
+
+    // Get the UWC points from the form
+    const uwcPointsInput = document.getElementById('uwc-points');
+    const uwcPoints = parseInt(uwcPointsInput.value);
+
+    // Initialize an array to store eligible degrees
     let eligibleDegrees = [];
 
+    // Iterate through each degree in the UWCData
     UWCData["University of Western Cape (UWC)"].forEach(degree => {
-        if (nscAverage >= degree.requirements["UWC points"]) {
+        // Flag to track if all subject requirements are met
+        let allSubjectsMet = true;
+
+        // Check if each subject requirement is met
+        Object.keys(degree.requirements).forEach(subject => {
+            if (subject === "UWC points") {
+                if (uwcPoints < degree.requirements[subject]) {
+                    allSubjectsMet = false;
+                }
+            } else {
+                // Check individual subject requirements if needed
+                let subjectIndex = selectedSubjects.indexOf(subject);
+                if (subjectIndex !== -1) {
+                    let subjectPercentage = percentages[subjectIndex];
+                    if (subjectPercentage < degree.requirements[subject]) {
+                        allSubjectsMet = false;
+                    }
+                } else {
+                    allSubjectsMet = false;
+                }
+            }
+        });
+
+        // If all subject requirements are met, add the degree to eligibleDegrees
+        if (allSubjectsMet) {
             eligibleDegrees.push(degree);
         }
     });
 
+    // Display the eligible degrees on the screen
     let resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = "<h2>Eligible Degrees at UWC:</h2>";
+    resultsDiv.innerHTML = "<h2>Eligible Degrees at University of Western Cape (UWC):</h2>";
     if (eligibleDegrees.length > 0) {
         let list = document.createElement('ul');
         eligibleDegrees.forEach(degree => {
             let listItem = document.createElement('li');
-            listItem.textContent = degree.degree;
+            let link = document.createElement('a');
+            link.textContent = degree.degree;
+            listItem.appendChild(link);
             list.appendChild(listItem);
         });
         resultsDiv.appendChild(list);
     } else {
-        resultsDiv.innerHTML += "<p>No degrees found matching your criteria at UWC.</p>";
+        resultsDiv.innerHTML += "<p>No degrees found matching your criteria.</p>";
     }
 }
+
 
 
 function calculateUWCPoints(percentages) {
