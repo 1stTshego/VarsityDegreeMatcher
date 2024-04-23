@@ -364,9 +364,6 @@ function deleteSubject(button) {
   subjectContainer.remove();
   subjectCounter--;
 }
-
-
-
 // Function to display eligible degrees based on user inputs
 function displayEligibleDegrees() {
     // Get the selected subjects and percentages from the form
