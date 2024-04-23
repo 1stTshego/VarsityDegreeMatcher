@@ -89,23 +89,17 @@ body {
 
 .primary-link {
     display: inline-block;
-        align-items: center;
-    justify-content: center;
     margin-top: 20px; /* Add some space between the paragraph and the link */
 }
 
 .contact-link {
-      align-items: center;
-    justify-content: center;
     display: block; /* Change to block so it takes full width */
     margin-top: 20px; /* Add some space between the paragraph and the link */
 }
 
-.gif-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px; /* Add some space between the paragraph and the gif */
+.gif-container,
+.link-container {
+    margin-top: 20px; /* Add some space between the gif and the link */
 }
 
 .gif-container img {
