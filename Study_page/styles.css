@@ -69,10 +69,10 @@ body {
 .contact-container {
     position: fixed;
     bottom: 0;
-    left: 0;
     width: 100%; /* Set width to 100% */
     text-align: center; /* Center align the contents */
 }
+
 
 .link-container {
     display: inline-block; /* Ensure the container doesn't span the full width */
