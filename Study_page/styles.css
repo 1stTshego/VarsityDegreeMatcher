@@ -14,14 +14,15 @@ body {
      flex-direction: column; 
 }
 
+
 .container {
     margin: 20px auto;
     padding: 20px;
-    
+    /* Remove border property to remove the border */
+ 
     text-align: center;
     width: 80%;
     display: block;
-    border-color: black;
 }
 
 
