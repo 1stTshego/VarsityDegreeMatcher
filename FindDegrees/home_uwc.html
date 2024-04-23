@@ -7,8 +7,54 @@
 <title>University of the Western Cape</title>
 <link rel="stylesheet" href="style.css">
 <script src="script_sun.js" defer></script>
+<script>
+// Paste the saveSubjectsToLocalStorage() and loadSubjectsFromLocalStorage() functions here
+// Function to save subjects and percentages to local storage
+function saveSubjectsToLocalStorage() {
+    const selectedSubjects = [];
+    const subjectElements = document.querySelectorAll('.subject');
+    subjectElements.forEach(select => {
+        if (select.value !== "") {
+            selectedSubjects.push(select.value);
+        }
+    });
+
+    const percentageInputs = document.querySelectorAll('.percentage-input');
+    const percentages = Array.from(percentageInputs).map(input => parseInt(input.value));
+
+    const data = {
+        subjects: selectedSubjects,
+        percentages: percentages
+    };
+
+    localStorage.setItem('userSubjects', JSON.stringify(data));
+}
+
+// Function to load subjects and percentages from local storage
+function loadSubjectsFromLocalStorage() {
+    const data = localStorage.getItem('userSubjects');
+    if (data) {
+        const { subjects, percentages } = JSON.parse(data);
+        const subjectElements = document.querySelectorAll('.subject');
+        subjects.forEach((subject, index) => {
+            subjectElements[index].value = subject;
+        });
+
+        const percentageInputs = document.querySelectorAll('.percentage-input');
+        percentages.forEach((percentage, index) => {
+            percentageInputs[index].value = percentage;
+        });
+    }
+}
+
+// Call saveSubjectsToLocalStorage() whenever there's a change in subjects or percentages
+function handleSubjectChange() {
+    saveSubjectsToLocalStorage();
+}
+
+</script>
 </head>
-<body>
+<body onload="loadSubjectsFromLocalStorage()">
 
 <nav class="navbar">
     <div class="container">
