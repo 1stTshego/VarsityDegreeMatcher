@@ -1,1 +1,107 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University of the Western Cape</title>
+<link rel="stylesheet" href="style.css">
+<script src="script_sun.js" defer></script>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container">
+       <a href="/index.html" class="not-sure-link" style="color: #fff;">Not sure what to study? <span>&#128533;</span></a>
+    </div>
+</nav>
+
+<div class="container">
+<img src="download (7).jpeg" alt="Stellenbosch University Logo" class="university-logo">
+    <h1>Stellenbosch University</h1>
+    <div class="dropdown">
+        <button class="dropbtn">Universities &#9776;</button>
+        <div class="dropdown-content">
+            <a href="home_up.html" onclick="saveSelectedSubjects()">University of Pretoria (UP)</a>
+            <a href="home_wits.html" onclick="saveSelectedSubjects()">University of Witwatersrand (Wits) </a>
+            <a href="home_sun.html" onclick="saveSelectedSubjects()">Stellenbosch University (SUN)</a>
+           <a href="home_uwc.html" onclick="saveSelectedSubjects()">Stellenbosch University (SUN)</a>
+        </div>
+    </div>
+
+    <h2>What do I qualify to do?</h2>
+
+    <div id="subject-container">
+        <div class="subject-wrapper">
+            <div class="subject-container">
+                <select class="subject" id="subjects1">
+                    <!-- Options will be added dynamically here -->
+                </select>
+                <input type="number" class="percentage-input" id="percentage1" min="0" max="100" placeholder="%" value="75">
+                <button class="delete-button" onclick="deleteSubject(this)">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <button id="add-button" class="action-button" onclick="addSubject()">Add Subject</button>
+    
+    <label for="aps">APS:</label>
+    <input type="number" id="aps" class="percentage-input" min="0" max="100" value="45">
+
+    <label for="average">Average:</label>
+    <input type="number" id="average" class="percentage-input" min="0" max="100" value="80">
+    
+    <button id="show-button" class="action-button" onclick="displayEligibleDegrees()">Show Degrees</button>
+    
+    <div id="results"></div>
+
+    <p>Note: You can select up to 7 subjects. If you have more than 7 subjects, choose your best 7 subjects.</p>
+</div>
+
+<script>
+    // Populate the first dropdown with subjects
+    document.addEventListener("DOMContentLoaded", function() {
+        const select = document.getElementById("subjects1");
+        const categories = {
+            "Language 1": ["English Home Language", "Afrikaans Huistaal", "Sesotho Home Language", "Siswati Home Language", "Setswana Home Language", "isiZulu Home Language", "isiXhosa Home Language", "isiNdebele Home Language", "Sepedi Home Language", "Xitsonga Home Language", "Tshivenda Home Language"],
+            "Language 2": ["English First Additional Language", "Afrikaans Eerste Additionele Taal"],
+            "Maths": ["Mathematics", "Mathematical Literacy", "Technical Mathematics"],
+            "LO": ["Life Orientation"],
+            "Subject 5": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies", "History", "Tourism"],
+            "Subject 6": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography","Religious Studies", "History", "Tourism"],
+            "Subject 7": ["Computer Applications Technology","Economics", "Physical Sciences", "Life Sciences", "Agricultural Sciences", "Business Studies", "Accounting", "Information Technology","History", "Geography", "Religious Studies", "History", "Tourism"],
+        };
+
+        for (const category in categories) {
+            const optgroup = document.createElement("optgroup");
+            optgroup.label = category;
+            categories[category].forEach(subject => {
+                const option = document.createElement("option");
+                option.value = subject;
+                option.textContent = subject;
+                optgroup.appendChild(option);
+            });
+            select.appendChild(optgroup);
+        }
+    });
+
+function saveSelectedSubjects() {
+    const selectedSubjects = document.querySelectorAll('.subject');
+    const selectedSubjectValues = Array.from(selectedSubjects).map(select => select.value);
+    localStorage.setItem('selectedSubjects', JSON.stringify(selectedSubjectValues));
+}
+
+window.onload = function() {
+    const savedSubjects = localStorage.getItem('selectedSubjects');
+    if (savedSubjects) {
+        const selectedSubjectValues = JSON.parse(savedSubjects);
+        const selectedSubjects = document.querySelectorAll('.subject');
+        selectedSubjects.forEach((select, index) => {
+            select.value = selectedSubjectValues[index];
+        });
+    }
+};
+</script>
+
+</body>
+</html>
