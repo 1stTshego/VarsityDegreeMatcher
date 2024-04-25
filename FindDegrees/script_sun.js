@@ -415,7 +415,8 @@ function displayEligibleDegrees() {
                 // Check if either Afrikaans Huistaal or Afrikaans Eerste Additionele Taal meets the requirement
                 let afrikaansSubjectIndex = selectedSubjects.indexOf("Afrikaans Huistaal");
                 let additionalAfrikaansSubjectIndex = selectedSubjects.indexOf("Afrikaans Eerste Additionele Taal");
-                if (afrikaansSubjectIndex === -1 && additionalAfrikaansSubjectIndex === -1) {
+                if ((afrikaansSubjectIndex === -1 || percentages[afrikaansSubjectIndex] < degree.requirements[subject]) &&
+                    (additionalAfrikaansSubjectIndex === -1 || percentages[additionalAfrikaansSubjectIndex] < degree.requirements[subject])) {
                     allSubjectsMet = false;
                 }
             } else {

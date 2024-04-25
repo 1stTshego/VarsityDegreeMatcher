@@ -306,7 +306,7 @@ function deleteSubject(button) {
   subjectCounter--;
 }
 
-function displayEligibleDegreesUWC() {
+function displayEligibleDegrees() {
     // Get the selected subjects and percentages from the form
     const selectedSubjects = [];
     const subjectElements = document.querySelectorAll('.subject');
@@ -319,22 +319,39 @@ function displayEligibleDegreesUWC() {
     const percentageInputs = document.querySelectorAll('.percentage-input');
     const percentages = Array.from(percentageInputs).map(input => parseInt(input.value));
 
-    // Get the UWC points from the form
-    const uwcPointsInput = document.getElementById('uwc-points');
-    const uwcPoints = parseInt(uwcPointsInput.value);
+    // Get the NSC average from the form
+    const averageInput = document.getElementById('average');
+    const nscAverage = parseInt(averageInput.value);
 
     // Initialize an array to store eligible degrees
     let eligibleDegrees = [];
 
-    // Iterate through each degree in the UWCData
-    UWCData["University of Western Cape (UWC)"].forEach(degree => {
+    // Iterate through each degree in the SunData
+    SunData["Stellenbosch University (SUN)"].forEach(degree => {
         // Flag to track if all subject requirements are met
         let allSubjectsMet = true;
 
         // Check if each subject requirement is met
         Object.keys(degree.requirements).forEach(subject => {
-            if (subject === "UWC points") {
-                if (uwcPoints < degree.requirements[subject]) {
+            if (subject === "NSC average") {
+                if (nscAverage < degree.requirements[subject]) {
+                    allSubjectsMet = false;
+                }
+            } else if (subject === "APS") {
+                // Check APS requirement if needed  
+            } else if (subject === "English Home Language" || subject === "English First Additional Language") {
+                // Check if either English Home Language or English First Additional Language meets the requirement
+                let englishSubjectIndex = selectedSubjects.indexOf("English Home Language");
+                let additionalEnglishSubjectIndex = selectedSubjects.indexOf("English First Additional Language");
+                if ((englishSubjectIndex === -1 || percentages[englishSubjectIndex] < degree.requirements[subject]) &&
+                    (additionalEnglishSubjectIndex === -1 || percentages[additionalEnglishSubjectIndex] < degree.requirements[subject])) {
+                    allSubjectsMet = false;
+                }
+            } else if (subject === "Afrikaans Huistaal" || subject === "Afrikaans Eerste Additionele Taal") {
+                // Check if either Afrikaans Huistaal or Afrikaans Eerste Additionele Taal meets the requirement
+                let afrikaansSubjectIndex = selectedSubjects.indexOf("Afrikaans Huistaal");
+                let additionalAfrikaansSubjectIndex = selectedSubjects.indexOf("Afrikaans Eerste Additionele Taal");
+                if (afrikaansSubjectIndex === -1 && additionalAfrikaansSubjectIndex === -1) {
                     allSubjectsMet = false;
                 }
             } else {
@@ -359,14 +376,25 @@ function displayEligibleDegreesUWC() {
 
     // Display the eligible degrees on the screen
     let resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = "<h2>Eligible Degrees at University of Western Cape (UWC):</h2>";
+    resultsDiv.innerHTML = "<h2>Eligible Degrees:</h2>";
     if (eligibleDegrees.length > 0) {
         let list = document.createElement('ul');
         eligibleDegrees.forEach(degree => {
             let listItem = document.createElement('li');
             let link = document.createElement('a');
             link.textContent = degree.degree;
+            //  link.href = degree.websiteURL; // Set the href to the website URL
+            // link.target = "_blank"; // Open the link in a new tab
             listItem.appendChild(link);
+
+            // Add a link to the official university booklet
+            let bookletLink = document.createElement('a');
+            bookletLink.textContent = "University Booklet";
+            bookletLink.href = "https://www.sun.ac.za/english/maties/Documents/Admission%20booklet%202025%20%28English%29.pdf";
+            bookletLink.target = "_blank";
+            listItem.appendChild(document.createTextNode(" "));
+            listItem.appendChild(bookletLink);
+
             list.appendChild(listItem);
         });
         resultsDiv.appendChild(list);
@@ -374,8 +402,6 @@ function displayEligibleDegreesUWC() {
         resultsDiv.innerHTML += "<p>No degrees found matching your criteria.</p>";
     }
 }
-
-
 
 function calculateUWCPoints(percentages) {
     const uwcLevels = {
