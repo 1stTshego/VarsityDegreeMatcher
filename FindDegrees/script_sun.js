@@ -466,7 +466,7 @@ function displayEligibleDegrees() {
     } else {
         resultsDiv.innerHTML += "<p>No degrees found matching your criteria.</p>";
     }
-}
+};
 
 // Function to calculate the level based on the percentage
 function calculateLevel(percentage) {
