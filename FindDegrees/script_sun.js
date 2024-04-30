@@ -373,7 +373,7 @@ function deleteSubject(button) {
 function displayEligibleDegrees() {
     // Get the selected subjects and percentages from the form
     const selectedSubjects = [];
-    const subjectElements = document.querySelectorAll('.subject');
+    const subjectElements = document.querySelectorAll('.subject-container');
     subjectElements.forEach(select => {
         if (select.value !== "") {
             selectedSubjects.push(select.value);
